@@ -1,10 +1,10 @@
 from django.apps import AppConfig
-from django.core.urlresolvers import reverse_lazy as _
+from django.urls import reverse_lazy
 
 
 class UserProfilesConfig(AppConfig):
     name = 'userprofiles'
-    verbose_name = _(u'User profiles')
+    app_label = 'userprofiles'
 
     def ready(self):
         from userprofiles import signals
