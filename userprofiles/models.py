@@ -9,7 +9,7 @@ GENDER =(('man','Man'),('woman','Woman'))
 
 
 class UserProfile(models.Model):  
-    user = models.OneToOneField(User, null=True, related_name="profile", verbose_name=_(u'User'))
+    user = models.OneToOneField(User,on_delete=models.CASCADE, null=True, related_name="profile", verbose_name=_(u'User'))
     phone = models.PositiveIntegerField(null=True, blank=True)
     gender = models.CharField(max_length=40, blank=True, verbose_name=_(u'Gender'), choices=GENDER) 
     avatar = models.ImageField(upload_to='userprofiles/avatars', null=True, blank=True, verbose_name=_(u"Avatar"))
